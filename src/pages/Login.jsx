@@ -10,7 +10,7 @@ function Login() {
     return (
         <div className="flex flex-col items-center h-[90vh]">
             <div className="flex items-center justify-center gap-4">
-                <img src="src/assets/lendlylogo.svg" alt="Lendly Logo" />
+                <img src="public/lendlylogo.svg" alt="Lendly Logo" />
                 <h1 className="font-[Inter] font-semibold text-4xl sm:text-[38px]">Lendly</h1>
             </div>
             <div>
@@ -21,19 +21,19 @@ function Login() {
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 font-[Inter] py-1">Email</label>
                     <div className="relative">
                         <input className="border p-2 w-full pl-10 rounded-lg" type="email" id="email" placeholder="email" required />
-                        <img src="src/assets/mailicon.svg" alt="emailicon" className="absolute left-2 top-1/2 transform -translate-y-1/2" />
+                        <img src="public/mailicon.svg" alt="emailicon" className="absolute left-2 top-1/2 transform -translate-y-1/2" />
                     </div>
                 </div>
                 <div>
                     <label htmlFor="password" className="block text-sm font-medium text-gray-700 font-[Inter] py-1">Password</label>
                     <div className="relative">
                         <input className="border mt-1 p-2 w-full pl-10 rounded-lg" type={passwordVisible ? "text" : "password"} id="password" placeholder="Password" required />
-                        <img src="src/assets/lockicon.svg" alt="Lock Icon" className="absolute left-2 top-1/2 transform -translate-y-1/2" />
+                        <img src="public/lockicon.svg" alt="Lock Icon" className="absolute left-2 top-1/2 transform -translate-y-1/2" />
                         <button type="button" onClick={togglePasswordVisibility} className="absolute right-2 top-1/2 transform -translate-y-1/2">
                             {passwordVisible ? (
-                                <img src="src/assets/closeeye.svg" alt="Hide Password" />
+                                <img src="public/closeeye.svg" alt="Hide Password" />
                             ) : (
-                                <img src="src/assets/eye.svg" alt="Show Password" />
+                                <img src="public/eye.svg" alt="Show Password" />
                             )}
                         </button>
                     </div>
