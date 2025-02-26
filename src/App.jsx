@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Logintest from "./pages/Logintest";
 function App() {
   return (
     <div className="min-h-screen bg-gray-100 p-4">
@@ -13,8 +14,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/Logintest" element={<Logintest />} />
         <Route path="/Register" element={<Register />} />
-
+        
       </Routes>
     </div>
   );
