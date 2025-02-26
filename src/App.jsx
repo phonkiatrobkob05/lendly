@@ -6,7 +6,7 @@ import Register from "./pages/Register";
 import Logintest from "./pages/Logintest";
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <div className="min-h-screen">
       
 
       {/* Routes */}
