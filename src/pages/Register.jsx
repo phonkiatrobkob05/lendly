@@ -1,40 +1,44 @@
+import React, {useState} from "react";
+
 function Register() {
+
     return (
-        <div className="container flex-col m-auto mt-[200px] bg-white pb-[30px]" >
+        <div className="flex flex-col h-screen items-center gap-4" >
 
-            <div className="header flex-col items-center gap-[9px] w-[100%] mt-[30px] text-2xl font-bold">
-                <div className="text text-[#3c009d]">Sign up</div>
-                <div className="underline w-[61px] h-[px] bg-[#3c009d] rounded-lg"></div>
+            <div className="flex justify-center items-center gap-4">
+                <img src="src/assets/lendlylogo.svg" alt="Lendly logo" />
+                <h1 className="font-[Inter] font-semibold text-4xl sm:text-[38px]">Lendly</h1>
             </div>
 
-            <div className="inputs flex-col mt-[55px] gap-[25px]">
+            <div className="">กรุณาลงทะเบียน</div>
 
-                <div className="input flex items-center m-auto w-[480px] h-[80px] bg-[eaeaea] rounded-lg">
-                    <img className="mt-[0px] mr-[30px]" src="" alt="" />
-                    <input className="w-[400px] h-[50px] bg-transparent border-none outline-none text-[#797979] text-lg" type="text" placeholder="Name" />
+            <form className="flex flex-col gap-4">
+
+                <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                    <input className="border mt-1 p-2 w-full rounded-xl" type="email" id="email" placeholder="Input your e-mail" required />
                 </div>
 
-                <div className="input flex items-center m-auto w-[480px] h-[80px] bg-[eaeaea] rounded-lg">
-                    <img className="mt-[0px] mr-[30px]" src="" alt="" />
-                    <input type="email" placeholder="E-mail ID" />
+                <div>
+                    <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+                    <input className="border mt-1 p-2 w-full rounded-xl" type="password" id="password" placeholder="Input your password" required />
                 </div>
 
-                <div className="input flex items-center m-auto w-[480px] h-[80px] bg-[eaeaea] rounded-lg">
-                    <img className="mt-[0px] mr-[30px]" src="" alt="" />
-                    <input type="password" placeholder="Password" />
+                <div>
+                    <label htmlFor="conPass" className="block text-sm font-medium text-gray-700">Confirm Password</label>
+                    <input className="border mt-1 p-2 w-full rounded-xl" type="conPass" id="conPass" placeholder="Confirm your password" required />
                 </div>
 
+                <button type="submit" className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-xl">Next</button>
+
+            </form>
+
+            <div className="mt-4 p-2 text-black text-sm items-center">Already have an account? 
+                <span className="text-blue-500 cursor-pointer">Login here!</span>
             </div>
-
-        <div className="submit-container">
-            <div className="forgot-password pl-[62px] mt-[27px] text-[#797979] text-sm">Forget password?<span>Click here!</span></div>
-            <div className="submit">Sign up</div>
-            <div className="submit">Login</div>
-
-        </div>
 
         </div>
     )
 }
 
-export default Register()
+export default Register;
