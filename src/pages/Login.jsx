@@ -8,13 +8,13 @@ function Login() {
     };
 
     return (
-        <div className="flex flex-col items-center h-[90vh]">
+        <div className="flex flex-col items-center h-[80vh]">
             <div className="flex items-center justify-center gap-4">
                 <img src="/lendlylogo.svg" alt="Lendly Logo" />
                 <h1 className="font-[Inter] font-semibold text-4xl sm:text-[38px]">Lendly</h1>
             </div>
             <div>
-                <h1 className="font-[Inter]">กรุณาเข้าสู่ระบบ</h1>
+                <h1 className="font-[Inter] space-y-4">กรุณาเข้าสู่ระบบ</h1>
             </div>
             <form className="flex flex-col gap-4">
                 <div>
