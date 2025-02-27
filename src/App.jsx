@@ -4,6 +4,8 @@ import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Logintest from "./pages/Logintest";
+import NextRegister from "./pages/NextRegister";
+
 function App() {
   return (
     <div className="min-h-screen bg-gray-100 p-4">
@@ -16,6 +18,7 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Logintest" element={<Logintest />} />
         <Route path="/Register" element={<Register />} />
+        <Route path="/NextRegister" element={<NextRegister />} />
         
       </Routes>
     </div>
