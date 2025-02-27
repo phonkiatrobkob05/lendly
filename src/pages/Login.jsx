@@ -38,12 +38,14 @@ function Login() {
                         </button>
                     </div>
                 </div>
-                <button type="submit" className="mt-4 bg-blue-500 text-white py-2 px-4 rounded">Login</button>
             </form>
             <div className="flex py-4">
                 <h1>Forgot your password? </h1>
                 <a href="" className="text-blue-300">&nbsp;Reset here</a>
+                
             </div>
+            <button type="submit" className="mt-4 bg-blue-500 text-white py-2 px-4 rounded">Login</button>
+
             {/* This part will be pushed to the bottom */}
             <div className="flex mt-auto py-4">
                 <h1>Don’t have an account? </h1>
