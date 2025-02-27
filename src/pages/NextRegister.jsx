@@ -94,13 +94,18 @@ function Register() {
                         >{/* ใส่ให้แหน่คับ */}
                             <option value="" disabled>Select your faculty</option>
                             <option value="Engineering">Engineering</option>
+                            <option value="Architecture">Architecture, Art and Design</option>
                             <option value="Science">Science</option>
-                            <option value="Arts">Arts</option>
+                            <option value="IndusEdu">Industrial Education and Technology</option>
+                            <option value="AgriTech">Agricultural and Technology</option>
+                            <option value="InformTech">Information Technology</option>
+                            <option value="FoodIndus">Food Industry</option>
                             <option value="Business">Business</option>
+                            <option value="LibArt">Liberal Arts</option>
                             <option value="Medicine">Medicine</option>
-                            <option value="Medicine">Medicine</option>
-                            <option value="Medicine">Medicine</option>
-                            <option value="Medicine">Medicine</option>
+                            <option value="Dentistry">Dentistry</option>
+                            <option value="Nursing">Nursing</option>
+                            <option value="IntInnTech">Integrated Innovative Technology</option>
 
                             
                         </select>
