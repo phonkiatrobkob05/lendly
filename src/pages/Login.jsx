@@ -14,7 +14,8 @@ function Login() {
                 <h1 className="font-[Inter] font-semibold text-4xl sm:text-[38px]">Lendly</h1>
             </div>
             <div className="">
-                <h1 className="font-[Inter]">กรุณาเข้าสู่ระบบ</h1>
+                <h1 className="mt-6 mb-6 font-[Inter]">กรุณาเข้าสู่ระบบ</h1>
+                <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
             </div>
             <form className="flex flex-col gap-4">
                 <div>
