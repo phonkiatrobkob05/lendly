@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-// import Feed from "./pages/Library";
+import Feed from "./pages/Feed";
 import Library from "./pages/Library";
 import NextRegister from "./pages/NextRegister";
 import Navbar from "./components/Navbar";
@@ -20,7 +20,7 @@ function App() {
         <Route path="/Register" element={<Register />} />
         <Route path="/NextRegister" element={<NextRegister />} />
         <Route path="/Navbar" element={<Navbar />} />
-        {/* <Route path="/Feed" element={<Feed />} /> */}
+        <Route path="/Feed" element={<Feed />} />
         <Route path="/Library" element={<Library />} />
       </Routes>
     </div>
