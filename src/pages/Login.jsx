@@ -8,13 +8,13 @@ function Login() {
     };
 
     return (
-        <div className="flex flex-col items-center h-[80vh]">
-            <div className="flex items-center justify-center gap-4">
+        <div className="flex flex-col items-center h-dvh pt-4">
+            <div className="flex items-center justify-center gap-4 ">
                 <img src="/lendlylogo.svg" alt="Lendly Logo" />
                 <h1 className="font-[Inter] font-semibold text-4xl sm:text-[38px]">Lendly</h1>
             </div>
-            <div>
-                <h1 className="font-[Inter] space-y-4">กรุณาเข้าสู่ระบบ</h1>
+            <div className="">
+                <h1 className="font-[Inter]">กรุณาเข้าสู่ระบบ</h1>
             </div>
             <form className="flex flex-col gap-4">
                 <div>
@@ -45,7 +45,7 @@ function Login() {
                 <a href="" className="text-blue-300">&nbsp;Reset here</a>
             </div>
             {/* This part will be pushed to the bottom */}
-            <div className="flex mt-auto">
+            <div className="flex mt-auto py-4">
                 <h1>Don’t have an account? </h1>
                 <a href="" className="text-blue-500">&nbsp;Register here</a>
             </div>

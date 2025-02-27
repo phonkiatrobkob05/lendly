@@ -8,7 +8,7 @@ import NextRegister from "./pages/NextRegister";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <div className="min-h-screen">
       
 
       {/* Routes */}
