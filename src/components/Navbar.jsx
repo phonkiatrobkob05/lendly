@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <nav className="navbar my-auto p-8">
-      <div className="navbar-container flex items-center mx-auto justify-center gap-4 shadow-2xl">
+    <nav className="navbar">
+      <div className="navbar-container flex items-center mx-auto justify-center gap-4 shadow-2xl py-4">
         <Link to="#" className="navbar-logo">
           <span className="flex flex-col items-center justify-center space-y-2 w-20 h-24">
             <img src="/Homeicon.svg" alt="" className="w-8 h-8" />
