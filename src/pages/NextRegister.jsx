@@ -1,11 +1,11 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Dropdown from "../components/Dropdown";
 function NextRegister() {
 
     const [selected, setSelected] = useState("Choose One")
 
     return (
-        
+
         <div className="flex flex-col h-screen items-center" >
 
             <div className="flex justify-center items-center gap-4">
@@ -20,8 +20,8 @@ function NextRegister() {
                 <div>
                     <label htmlFor="studentNum" className="block text-sm font-medium font-[Inter] text-gray-700 py-1">Student Number</label>
                     <div className="relative">
-                        <input className="border p-2 pl-3 w-full rounded-lg" type="studentNum" 
-                        id="studentNum" placeholder="Student number" required />
+                        <input className="border p-2 pl-3 w-full rounded-lg" type="studentNum"
+                            id="studentNum" placeholder="Student number" required />
 
                     </div>
 
@@ -30,8 +30,8 @@ function NextRegister() {
                 <div>
                     <label htmlFor="FirstName" className="block text-sm font-medium font-[Inter] text-gray-700 py-1">First Name</label>
                     <div className="relative">
-                        <input className="border p-2 pl-3 w-full rounded-lg" type="FirstName" 
-                        id="FirstName" placeholder="First Name" required />
+                        <input className="border p-2 pl-3 w-full rounded-lg" type="FirstName"
+                            id="FirstName" placeholder="First Name" required />
 
                     </div>
 
@@ -40,8 +40,8 @@ function NextRegister() {
                 <div>
                     <label htmlFor="LastName" className="block text-sm font-medium font-[Inter] text-gray-700 py-1">Last Name</label>
                     <div className="relative">
-                        <input className="border p-2 pl-3 w-full rounded-lg" type="LastName" 
-                        id="LastName" placeholder="Last Name" required />
+                        <input className="border p-2 pl-3 w-full rounded-lg" type="LastName"
+                            id="LastName" placeholder="Last Name" required />
 
                     </div>
 
@@ -52,13 +52,13 @@ function NextRegister() {
 
                 </div>
 
-                
+
 
                 <button type="submit" className="mt-4 bg-blue-500 text-white py-2 px-4 rounded">Register</button>
 
             </form>
 
-            <div className="mt-4 p-2 text-black text-sm items-center">Already have an account? 
+            <div className="mt-4 p-2 text-black text-sm items-center">Already have an account?
                 <span className="text-blue-500 cursor-pointer">Login here!</span>
             </div>
 

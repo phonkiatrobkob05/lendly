@@ -12,7 +12,7 @@ function Register() {
     return (
         <div className="flex flex-col h-screen items-center" >
 
-            <div className="flex justify-center items-center gap-4">
+            <div className="flex justify-center items-center gap-4">    
                 <img src="/lendlylogo.svg" alt="Lendly logo" />
                 <h1 className="font-[Inter] font-semibold text-4xl sm:text-[38px]">Lendly</h1>
             </div>
