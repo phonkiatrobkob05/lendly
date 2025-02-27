@@ -23,13 +23,13 @@ function Register() {
     };
 
     return (
-        <div className="flex flex-col justify-center items-center h-screen bg-gray-100">
+        <div className="flex flex-col justify-center items-center h-screen ">
             <div className="flex justify-center items-center gap-4">
                 <img src="/lendlylogo.svg" alt="Lendly logo" />
                 <h1 className="font-[Inter] font-semibold text-4xl sm:text-[38px]">Lendly</h1>
             </div>
             <div className="">กรุณาลงทะเบียน</div>
-            <div className="w-full max-w-md p-8 bg-white rounded-lg">
+            <div className="w-full max-w-md p-8 rounded-lg">
                 <h2 className="text-2xl font-bold text-center mb-6">Register</h2>
 
                 {isSuccess && (
@@ -46,7 +46,7 @@ function Register() {
                         <input
                             type="text"
                             id="studentId"
-                            className="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                            className="mt-2 block w-full px-4 py-2 border  rounded-md focus:ring-2 focus:ring-blue-500"
                             value={studentId}
                             onChange={(e) => setStudentId(e.target.value)}
                             required
@@ -60,7 +60,7 @@ function Register() {
                         <input
                             type="text"
                             id="firstName"
-                            className="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                            className="mt-2 block w-full px-4 py-2 border  rounded-md focus:ring-2 focus:ring-blue-500"
                             value={firstName}
                             onChange={(e) => setFirstName(e.target.value)}
                             required
@@ -74,7 +74,7 @@ function Register() {
                         <input
                             type="text"
                             id="lastName"
-                            className="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                            className="mt-2 block w-full px-4 py-2 border  rounded-md focus:ring-2 focus:ring-blue-500"
                             value={lastName}
                             onChange={(e) => setLastName(e.target.value)}
                             required
@@ -87,7 +87,7 @@ function Register() {
                         </label>
                         <select
                             id="faculty"
-                            className="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                            className="mt-2 block w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500"
                             value={faculty}
                             onChange={(e) => setFaculty(e.target.value)}
                             required
