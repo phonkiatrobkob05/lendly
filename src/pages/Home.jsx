@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Card from "../components/Card";
 import Navbar from '../components/Navbar';
+import { NavLink } from 'react-router-dom';
 
 function Home() {
   const cardData = [
@@ -100,7 +101,7 @@ function Home() {
       <div className="w-full">
         <div className='flex mx-auto justify-between'>
         <h1 className="text-xl font-semibold mb-4">Trending</h1>
-        <p>see all</p>
+        <NavLink to="">see all</NavLink>
         </div>
         <Swiper
           spaceBetween={20}
