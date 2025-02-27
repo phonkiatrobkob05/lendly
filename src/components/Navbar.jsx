@@ -11,14 +11,14 @@ function Navbar() {
   }, [location]);
 
   return (
-    <nav className="navbar sticky bottom-0 w-full bg-white shadow-2xl py-4 z-50">
+    <nav className="navbar sticky bottom-0 w-full bg-white py-4 z-50">
       <div className="navbar-container flex items-center mx-auto justify-center gap-4">
         <Link
           to="/"
           className={`navbar-logo ${activePage === '/' ? 'bg-blue-500' : ''}`}
         >
           <span className="flex flex-col items-center justify-center space-y-2 w-20 h-24">
-            <img src="/Homeicon.svg" alt="" className="w-8 h-8" />
+            <img src="/homesicon.svg" alt="" className="w-8 h-8" />
             <h1 className="text-sm">Home</h1>
           </span>
         </Link>
