@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Loading from "./pages/Loading";
 // import Logintest from "./pages/Logintest";
 import NextRegister from "./pages/NextRegister";
 import Navbar from "./components/Navbar";
@@ -19,6 +20,7 @@ function App() {
         <Route path="/Register" element={<Register />} />
         <Route path="/NextRegister" element={<NextRegister />} />
         <Route path="/Navbar" element={<Navbar />} />
+        <Route path="/Loading" element={<Loading />} />
         
       </Routes>
     </div>
