@@ -3,8 +3,9 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+// import Logintest from "./pages/Logintest";
 import NextRegister from "./pages/NextRegister";
-
+import Navbar from "./components/Navbar";
 function App() {
   return (
     <div className="min-h-screen">
@@ -17,6 +18,7 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/NextRegister" element={<NextRegister />} />
+        <Route path="/Navbar" element={<Navbar />} />
         
       </Routes>
     </div>
