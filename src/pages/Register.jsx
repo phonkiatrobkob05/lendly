@@ -108,7 +108,7 @@ function Register() {
           </div>
         </div>
 
-        <button type="submit" className="mt-4 bg-blue-500 text-white py-2 px-4 rounded">
+        <button type="submit" className="mt-4 bg-blue-500 text-white py-2 px-4 rounded cursor-pointer">
           Next
         </button>
       </form>
