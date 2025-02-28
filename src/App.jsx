@@ -9,6 +9,7 @@ import Feed from "./pages/Feed";
 import Library from "./pages/Library";
 import NextRegister from "./pages/NextRegister";
 import Navbar from "./components/Navbar";
+import ItemDetails from "./pages/ItemDetails";
 function App() {
   return (
     <div className="min-h-screen">
@@ -24,6 +25,8 @@ function App() {
         <Route path="/Navbar" element={<Navbar />} />
         <Route path="/Feed" element={<Feed />} />
         <Route path="/Library" element={<Library />} />
+        <Route path="/item/:id" element={<ItemDetails />} />
+
       </Routes>
     </div>
   );

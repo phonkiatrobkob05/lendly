@@ -33,7 +33,7 @@ function Loading() {
             >
                 I'm new, Let's Register
             </button>
-
+            
         </div>
         
     )
