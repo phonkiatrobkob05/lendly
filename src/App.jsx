@@ -10,8 +10,8 @@ import NextRegister from "./pages/NextRegister";
 import Navbar from "./components/Navbar";
 import Help from "./pages/helpFolder/Help";
 import HelpPage1 from "./pages/helpFolder/HelpPage1";
-import Contact from "./pages/helpFolder/Contact"
-import Report from "./pages/helpFolder/Report" 
+import Contact from "./pages/helpFolder/Contact";
+import Report from "./pages/helpFolder/Report";
 
 import ItemDetails from "./pages/ItemDetails";
 import axios from "axios";
@@ -22,39 +22,41 @@ import Default from "./pages/Default";
 import ProfileReport from "./pages/ProfileFolder/ProfileReport";
 
 function App() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const idToken = localStorage.getItem('token')
-  const currentUser=async(authtoken)=>{
+  const idToken = localStorage.getItem("token");
+  const currentUser = async (authtoken) => {
     try {
-      const res = await axios.post(import.meta.env.VITE_API_URI + "/currentUser",{},{headers:{authtoken}})
-      console.log('currentUser',res);
-      return res
+      const res = await axios.post(
+        import.meta.env.VITE_API_URI + "/currentUser",
+        {},
+        { headers: { authtoken } }
+      );
+      console.log("currentUser", res);
+      return res;
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
-  const fetchAndDispatchUser=async()=>{
-    if(!idToken){
-      console.log('no token in localstorage');
+  const fetchAndDispatchUser = async () => {
+    if (!idToken) {
+      console.log("no token in localstorage");
     }
-    const userData = await currentUser(idToken)
-    if(userData){
+    const userData = await currentUser(idToken);
+    if (userData) {
       dispatch(
         login({
-        email:userData.data.email,
-        token:idToken
-      }))
-      
+          email: userData.data.email,
+          token: idToken,
+        })
+      );
     }
-  }
-  
-  fetchAndDispatchUser()
+  };
+
+  fetchAndDispatchUser();
   return (
     <div className="min-h-screen">
-      
-
       {/* Routes */}
       <Routes>
         {/* public */}
@@ -64,31 +66,48 @@ function App() {
         <Route path="/Help" element={<Help />} />
         <Route path="/HelpPage1" element={<HelpPage1 />} />
         <Route path="/Contact" element={<Contact />} />
-        
-        
-        
+
         {/* private */}
-        <Route path="/Home" element={
-          <User>
-            <Home />
-          </User>
-          }/>
-          <Route path="/Report" element={
-          <User>
-            <Report />
-          </User>
-          }/>
-        <Route path="/Profile" element={<Profile />} />
-        <Route path="/ProfileReport" element={<ProfileReport />} />
+        <Route
+          path="/Home"
+          element={
+            <User>
+              <Home />
+            </User>
+          }
+        />
+        <Route
+          path="/Report"
+          element={
+            <User>
+              <Report />
+            </User>
+          }
+        />
+        <Route
+          path="/Profile"
+          element={
+            <user>
+              <Profile />
+            </user>
+          }
+        />
+        <Route
+          path="/ProfileReport"
+          element={
+            <user>
+              <ProfileReport />
+            </user>
+          }
+        />
         <Route path="/NextRegister" element={<NextRegister />} />
         <Route path="/Navbar" element={<Navbar />} />
         <Route path="/Feed" element={<Feed />} />
         <Route path="/Library" element={<Library />} />
         <Route path="/item/:id" element={<ItemDetails />} />
-
       </Routes>
     </div>
   );
 }
 
-export default App
+export default App;
