@@ -13,7 +13,7 @@ function Profile() {
         <div className="absolute w-[44px] h-[44px] bg-[#1769ff] rounded-full flex justify-center items-center bottom-0 right-0 border-2 border-[#5194ff] ">
           <i className="fa-solid fa-pen text-[#ffffff]"></i>
         </div>
-        <div className="w-full h-full rounded-full truncate border-2 border-[#5194ff] ">
+        <div className="aspect-square rounded-full truncate border-2 border-[#5194ff] ">
           <img
             src="/cat.jpg"
             alt="profile pic"
@@ -90,9 +90,6 @@ function Profile() {
           >
             <i className="fa-solid fa-arrow-right-from-bracket text-[30px] text-[#DC2626]"></i>
             <p className="text-[14px]">Logout</p>
-          </div>
-          <div className="">
-            <i className="fa-solid fa-angle-right text-[30px] text-[#9CA3AF]"></i>
           </div>
         </div>
       </div>
