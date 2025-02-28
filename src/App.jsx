@@ -67,6 +67,8 @@ function App() {
         <Route path="/Navbar" element={<Navbar />} />
         <Route path="/Feed" element={<Feed />} />
         <Route path="/Library" element={<Library />} />
+        <Route path="/item/:id" element={<ItemDetails />} />
+
       </Routes>
     </div>
   );
