@@ -12,34 +12,41 @@ function Home() {
     {
       title: "Ichitan Lemon",
       description: "Lemon Lemon",
-      imageUrl: "/unclea.jpg",
+      file: "/unclea.jpg",
       genre: "Tea",  // Added genre
       lenderName: "John Doe",  // Added lender name
       status: "Available",  // Added status
+      price: 40,  // Added price
     },
     {
       title: "Ichitan Genmai",
       description: "Rice Rice",
-      imageUrl: "/unclelueng.jpg",
+      file: "/unclelueng.jpg",
       genre: "Tea",  // Added genre
       lenderName: "Jane Smith",  // Added lender name
       status: "On Borrow",  // Added status
+      price: 20,  // Added price
+
     },
     {
       title: "Ichitan Original",
       description: "Green tea",
-      imageUrl: "/uncletony.jpg",
+      file: "/uncletony.jpg",
       genre: "Tea",  // Added genre
       lenderName: "Alice Brown",  // Added lender name
       status: "Available",  // Added status
+      price: 30,  // Added price
+
     },
     {
       title: "Ichitan Original",
       description: "Green tea",
-      imageUrl: "/unclelee.jpg",
+      file: "/unclelee.jpg",
       genre: "Tea",  // Added genre
       lenderName: "Bob White",  // Added lender name
       status: "On Borrow",  // Added status
+      price: 210,  // Added price
+
     },
     // Add more items as needed
   ];
@@ -125,10 +132,11 @@ function Home() {
                     id={`card-${index}`}
                     title={card.title}
                     description={card.description}
-                    imageSrc={card.imageUrl}
+                    file={card.file}
                     genre={card.genre} // Pass genre
                     lenderName={card.lenderName} // Pass lender name
                     status={card.status} // Pass status
+                    price={card.price} // Pass price
                   />
                 </div>
               </SwiperSlide>
@@ -161,10 +169,12 @@ function Home() {
                     id={`card-${index}`}
                     title={card.title}
                     description={card.description}
-                    imageSrc={card.imageUrl}
+                    file={card.file}
                     genre={card.genre} // Pass genre
                     lenderName={card.lenderName} // Pass lender name
                     status={card.status} // Pass status
+                    price={card.price} // Pass price
+
                   />
                 </div>
               </SwiperSlide>

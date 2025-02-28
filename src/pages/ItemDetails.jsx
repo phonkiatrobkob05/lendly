@@ -5,7 +5,7 @@ function ItemDetails() {
   const { id } = useParams(); // Get the dynamic route parameter (id)
 
   // Retrieve the data passed from the Home page
-  const { title, description, imageSrc, genre, lenderName, status } = location.state || {};
+  const { title, description, file, genre, lenderName, status,price } = location.state || {};
 
   // Status Indicator for ItemDetails
   const statusIndicator = status === "Available" ? (
@@ -28,7 +28,7 @@ function ItemDetails() {
       <div className="flex flex-col gap-4 items-center">
         <img
           className="w-48 h-48 object-cover rounded-lg p-4"
-          src={imageSrc || "/defaultimage.png"} // Fallback image if no imageSrc
+          src={file || "/defaultimage.png"} // Fallback image if no imageSrc
           alt="Item Image"
         />
         <div className="flex flex-col gap-6 mb-4 justify-center items-center">
@@ -36,9 +36,9 @@ function ItemDetails() {
             <p className="text-sm text-gray-500">Genre: {genre}</p>
             <div className="flex justify-between">
               <h1 className="text-xl font-bold mb-4 items-center">{title}</h1>
-              <div className="flex">
+              <div className="flex mx-4">
                 <h1 className="text-xl font-bold mb-4 items-center" id="price">
-                  100
+                  {price}
                 </h1>
                 <h1 className="text-xl font-bold mb-4 items-center">
                   &nbsp;Baht <span className="text-gray-500">per day</span>
