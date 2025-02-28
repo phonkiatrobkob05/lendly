@@ -14,8 +14,8 @@ function Navbar() {
     <nav className="navbar sticky bottom-0 w-full bg-white py-4 z-50">
       <div className="navbar-container flex items-center mx-auto justify-center gap-4">
         <Link
-          to="/Home"
-          className={`navbar-logo ${activePage === '/Home' ? 'bg-blue-500' : ''}`}
+          to="/"
+          className={`navbar-logo ${activePage === '/' ? 'bg-blue-500' : ''}`}
         >
           <span className="flex flex-col items-center justify-center space-y-2 w-20 h-24">
             <img src="/homesicon.svg" alt="" className="w-8 h-8" />

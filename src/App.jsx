@@ -4,11 +4,12 @@ import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Loading from "./pages/Loading";
-// import Logintest from "./pages/Logintest";
 import Feed from "./pages/Feed";
 import Library from "./pages/Library";
 import NextRegister from "./pages/NextRegister";
 import Navbar from "./components/Navbar";
+
+import ItemDetails from "./pages/ItemDetails";
 function App() {
   return (
     <div className="min-h-screen">
