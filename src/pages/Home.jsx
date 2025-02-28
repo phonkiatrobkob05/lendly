@@ -4,6 +4,8 @@ import 'swiper/css';
 import Card from "../components/Card";
 import Navbar from '../components/Navbar';
 import { NavLink } from 'react-router-dom';
+import { useState,useEffect } from 'react';
+import axios from 'axios';
 
 function Home() {
   const cardData = [
@@ -33,6 +35,27 @@ function Home() {
     },
     // Add more items as needed
   ];
+
+  const [data, setData] = useState([])
+  const authtoken = localStorage.getItem('token')
+
+  const loadData = async () => {
+    try {
+      const getData = await axios.get(
+        import.meta.env.VITE_API_URI + "/product",{headers:{authtoken}}
+      );
+      setData(getData.data);
+    } catch (error) {
+      console.log(error);
+      console.log("loadData error");
+    }
+  };
+
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  
 
   return (
     <div className="flex flex-col min-h-screen p-4">
