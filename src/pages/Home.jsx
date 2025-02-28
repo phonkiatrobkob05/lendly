@@ -13,25 +13,33 @@ function Home() {
       title: "Ichitan Lemon",
       description: "Lemon Lemon",
       imageUrl: "/unclea.jpg",
-      tags: ["Tea", "Ichitan", "Lemon"],
+      genre: "Tea",  // Added genre
+      lenderName: "John Doe",  // Added lender name
+      status: "Available",  // Added status
     },
     {
       title: "Ichitan Genmai",
       description: "Rice Rice",
       imageUrl: "/unclelueng.jpg",
-      tags: ["Tea", "Ichitan", "Genmai"],
+      genre: "Tea",  // Added genre
+      lenderName: "Jane Smith",  // Added lender name
+      status: "On Borrow",  // Added status
     },
     {
       title: "Ichitan Original",
       description: "Green tea",
       imageUrl: "/uncletony.jpg",
-      tags: ["Tea", "Ichitan", "Og"],
+      genre: "Tea",  // Added genre
+      lenderName: "Alice Brown",  // Added lender name
+      status: "Available",  // Added status
     },
     {
       title: "Ichitan Original",
       description: "Green tea",
       imageUrl: "/unclelee.jpg",
-      tags: ["Tea", "Ichitan", "Og"],
+      genre: "Tea",  // Added genre
+      lenderName: "Bob White",  // Added lender name
+      status: "On Borrow",  // Added status
     },
     // Add more items as needed
   ];
@@ -45,12 +53,14 @@ function Home() {
         import.meta.env.VITE_API_URI + "/product",{headers:{authtoken}}
       );
       setData(getData.data);
+      console.log(getData.data);
+      
     } catch (error) {
       console.log(error);
       console.log("loadData error");
     }
   };
-
+ 
   useEffect(() => {
     loadData();
   }, []);
@@ -75,7 +85,7 @@ function Home() {
             <img src="/bellicon.svg" alt="Notification" />
           </button>
         </div>
-  
+
         {/* Hero Section */}
         <div className="flex">
           <div className="flex flex-col text-center mb-8">
@@ -89,7 +99,7 @@ function Home() {
             <img src="/lendborrowlogo.svg" alt="Lend and Borrow" className="w-30" />
           </div>
         </div>
-  
+
         {/* Recommended Section */}
         <div className="w-full">
           <div className="flex mx-auto justify-between">
@@ -116,14 +126,16 @@ function Home() {
                     title={card.title}
                     description={card.description}
                     imageSrc={card.imageUrl}
-                    tags={card.tags}
+                    genre={card.genre} // Pass genre
+                    lenderName={card.lenderName} // Pass lender name
+                    status={card.status} // Pass status
                   />
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
-  
+
         {/* Trending Section */}
         <div className="w-full">
           <div className="flex mx-auto justify-between">
@@ -150,15 +162,17 @@ function Home() {
                     title={card.title}
                     description={card.description}
                     imageSrc={card.imageUrl}
-                    tags={card.tags}
+                    genre={card.genre} // Pass genre
+                    lenderName={card.lenderName} // Pass lender name
+                    status={card.status} // Pass status
                   />
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
-      </div> 
-  
+      </div>
+
       {/* Navbar stays at the bottom */}
       <Navbar />
     </div>
