@@ -15,7 +15,6 @@ import { useDispatch } from "react-redux";
 import { login } from "./store/UserSlice";
 import User from "./pages/user/User";
 import Default from "./pages/Default";
-import ItemDetails from './pages/ItemDetails'
 
 function App() {
   const dispatch = useDispatch()
