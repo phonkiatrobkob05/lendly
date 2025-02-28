@@ -1,6 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
-import Profile from "./pages/Profile";
+import Profile from "./pages/ProfileFolder/Profile";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Loading from "./pages/Loading";
@@ -15,6 +15,7 @@ import { useDispatch } from "react-redux";
 import { login } from "./store/UserSlice";
 import User from "./pages/user/User";
 import Default from "./pages/Default";
+import Report from "./pages/ProfileFolder/report";
 
 function App() {
   const dispatch = useDispatch()
@@ -65,6 +66,7 @@ function App() {
           </User>
           }/>
         <Route path="/Profile" element={<Profile />} />
+        <Route path="/Report" element={<Report />} />
         <Route path="/NextRegister" element={<NextRegister />} />
         <Route path="/Navbar" element={<Navbar />} />
         <Route path="/Feed" element={<Feed />} />
