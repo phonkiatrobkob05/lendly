@@ -15,7 +15,7 @@ function Profile() {
         </div>
         <div className="w-full h-full rounded-full truncate border-2 border-[#5194ff] ">
           <img
-            src="../public/cat.jpg"
+            src="/cat.jpg"
             alt="profile pic"
             className="object-cover h-full w-full"
           />
