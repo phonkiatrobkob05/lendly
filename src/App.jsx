@@ -9,21 +9,86 @@ import Feed from "./pages/Feed";
 import Library from "./pages/Library";
 import NextRegister from "./pages/NextRegister";
 import Navbar from "./components/Navbar";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { login } from "./store/UserSlice";
+import User from "./pages/user/User";
+import Default from "./pages/Default";
+
 function App() {
+  const dispatch = useDispatch()
+
+  const idToken = localStorage.getItem('token')
+  const currentUser=async(authtoken)=>{
+    try {
+      const res = await axios.post(import.meta.env.VITE_API_URI + "/currentUser",{},{headers:{authtoken}})
+      console.log('currentUser',res);
+      return res
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const fetchAndDispatchUser=async()=>{
+    if(!idToken){
+      console.log('no token in localstorage');
+    }
+    const userData = await currentUser(idToken)
+    if(userData){
+      dispatch(
+        login({
+        email:userData.data.email,
+        token:idToken
+      }))
+      
+    }
+  }
+  
+  fetchAndDispatchUser()
+
   return (
     <div className="min-h-screen">
-      
 
       {/* Routes */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Profile" element={<Profile />} />
+        {/* public */}
         <Route path="/Login" element={<Login />} />
         <Route path="/Register" element={<Register />} />
-        <Route path="/NextRegister" element={<NextRegister />} />
-        <Route path="/Navbar" element={<Navbar />} />
-        <Route path="/Feed" element={<Feed />} />
-        <Route path="/Library" element={<Library />} />
+        <Route path="/" element={<Default />} />
+        
+        
+        {/* private */}
+        <Route path="/Home" element={
+          <User>
+            <Home />
+          </User>
+          }/>
+        <Route path="/Profile" element={
+          <User>
+            <Profile />
+          </User>} 
+          />
+        <Route path="/NextRegister" element={
+          <User>
+            <NextRegister />
+          </User>
+        } />
+        <Route path="/Feed" element={
+          <User>
+            <Feed />
+          </User>
+        } />
+        <Route path="/Library" element={
+          <User>
+            <Library />
+          </User>
+        } />
+      
+      <Route path="/Navbar" element={
+        <User>
+          <Navbar />
+        </User>
+      } />
       </Routes>
     </div>
   );
