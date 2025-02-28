@@ -1,17 +1,18 @@
 import { useNavigate } from 'react-router-dom';
 
-function Card({ id, title, description, imageSrc, genre, lenderName, status }) {
+function Card({ id, title, description, file, genre, lenderName, status,price }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate(`/item/${id}`, {
-      state: {
+        state: {
         title,
         description,
-        imageSrc,
+        file,
         genre,
         lenderName,
-        status, // Pass the status to the ItemDetails page
+        status,
+        price,
       },
     });
   };
@@ -31,7 +32,7 @@ function Card({ id, title, description, imageSrc, genre, lenderName, status }) {
       <div className="aspect-w-1 aspect-h-1 overflow-hidden">
         <img
           className="w-full h-[100px] object-cover rounded-2xl"
-          src={imageSrc}
+          src={file}
           alt={title}
         />
       </div>
@@ -42,6 +43,7 @@ function Card({ id, title, description, imageSrc, genre, lenderName, status }) {
         <div className="text-sm text-gray-500 mb-2">
           <p>Genre: {genre}</p>
           <p>Lender: {lenderName}</p>
+          <p>Price: {price} Baht per day</p>
           <p>{statusIndicator}</p> {/* Show status indicator here */}
         </div>
       </div>
