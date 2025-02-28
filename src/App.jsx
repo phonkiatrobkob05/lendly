@@ -19,7 +19,7 @@ import { useDispatch } from "react-redux";
 import { login } from "./store/UserSlice";
 import User from "./pages/user/User";
 import Default from "./pages/Default";
-import Report from "./pages/ProfileFolder/report";
+import ProfileReport from "./pages/ProfileFolder/ProfileReport";
 
 function App() {
   const dispatch = useDispatch()
@@ -79,7 +79,7 @@ function App() {
           </User>
           }/>
         <Route path="/Profile" element={<Profile />} />
-        <Route path="/Report" element={<Report />} />
+        <Route path="/ProfileReport" element={<ProfileReport />} />
         <Route path="/NextRegister" element={<NextRegister />} />
         <Route path="/Navbar" element={<Navbar />} />
         <Route path="/Feed" element={<Feed />} />

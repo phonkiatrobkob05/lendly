@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Report() {
+function ProfileReport() {
   return (
     <div className="w-full h-screen flex flex-col justify-between items-center gap-[10px] relative">
       <div className="w-full h-[100px] flex justify-between items-end px-[40px]">
@@ -19,4 +19,4 @@ function Report() {
   );
 }
 
-export default Report;
+export default ProfileReport;

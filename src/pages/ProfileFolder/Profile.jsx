@@ -66,7 +66,7 @@ function Profile() {
           </div>
 
           {/* Report a problem */}
-          <a href="/#/report" className="flex justify-between border-b-2 py-[16px] border-[#9CA3AF]">
+          <a href="/#/profilereport" className="flex justify-between border-b-2 py-[16px] border-[#9CA3AF]">
             <div className="flex justify-center items-center gap-[13px]">
               <i className="fa-solid fa-triangle-exclamation text-[30px] text-[#5194FF]"></i>
               <p className="text-[14px]">Report a problem</p>
