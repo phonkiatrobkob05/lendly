@@ -9,6 +9,12 @@ import Loading from "./pages/Loading";
 import Library from "./pages/Library";
 import NextRegister from "./pages/NextRegister";
 import Navbar from "./components/Navbar";
+import Help from "./pages/helpFolder/Help";
+import HelpPage1 from "./pages/helpFolder/HelpPage1";
+import Report from "./pages/helpFolder/Report";
+import Contact from "./pages/helpFolder/Contact";
+import Assurance from "./pages/helpFolder/Assurance";
+
 function App() {
   return (
     <div className="min-h-screen">
@@ -23,6 +29,11 @@ function App() {
         <Route path="/NextRegister" element={<NextRegister />} />
         <Route path="/Navbar" element={<Navbar />} />
         <Route path="/Loading" element={<Loading />} />
+        <Route path="/Help" element={<Help />} />
+        <Route path="/HelpPage1" element={<HelpPage1 />} />
+        <Route path="/Report" element={<Report />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/Assurance" element={<Assurance />} />
         
       </Routes>
     </div>
