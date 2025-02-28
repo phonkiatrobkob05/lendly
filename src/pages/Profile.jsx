@@ -7,7 +7,7 @@ function Profile() {
   return (
     <div className="w-full h-screen flex flex-col items-center gap-[10px] relative">
       {/* Content Container */}
-      <div className="flex-grow flex flex-col items-center">
+      <div className="flex-grow flex flex-col items-center w-full">
         <div className="w-full h-[100px] flex justify-center items-end">
           <h1 className="text-[14px] font-bold">My Profile</h1>
         </div>
