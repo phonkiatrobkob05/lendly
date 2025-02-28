@@ -8,6 +8,10 @@ import Feed from "./pages/Feed";
 import Library from "./pages/Library";
 import NextRegister from "./pages/NextRegister";
 import Navbar from "./components/Navbar";
+import Help from "./pages/helpFolder/Help";
+import HelpPage1 from "./pages/helpFolder/HelpPage1";
+import Contact from "./pages/helpFolder/Contact"
+import Report from "./pages/helpFolder/Report" 
 
 import ItemDetails from "./pages/ItemDetails";
 import axios from "axios";
@@ -57,12 +61,21 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/" element={<Default />} />
+        <Route path="/Help" element={<Help />} />
+        <Route path="/HelpPage1" element={<HelpPage1 />} />
+        <Route path="/Contact" element={<Contact />} />
+        
         
         
         {/* private */}
         <Route path="/Home" element={
           <User>
             <Home />
+          </User>
+          }/>
+          <Route path="/Report" element={
+          <User>
+            <Report />
           </User>
           }/>
         <Route path="/Profile" element={<Profile />} />

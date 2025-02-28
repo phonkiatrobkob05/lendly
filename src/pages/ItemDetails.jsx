@@ -1,25 +1,24 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useParams } from 'react-router-dom';
 
 function ItemDetails() {
-  const navigate = useNavigate(); // Hook to navigate
-  const goBack = () => navigate(-1); // Navigate to the previous page (history.back())
+  const location = useLocation(); // Get the location object
+  const { id } = useParams(); // Get the dynamic route parameter (id)
 
-  // Dynamic status
-  const status = "Available"; // You can replace this with dynamic data (e.g., fetched from an API)
+  // Retrieve the data passed from the Home page
+  const { title, description, file, genre, lenderName, status,price } = location.state || {};
 
-  // Status Indicator Color
-  const statusIndicator =
-    status === "Available" ? (
-      <span className="text-green-500">● Available</span> // Green for Available
-    ) : (
-      <span className="text-red-500">● On Borrow</span> // Red for On Borrow
-    );
+  // Status Indicator for ItemDetails
+  const statusIndicator = status === "Available" ? (
+    <span className="text-green-500">● Available</span>
+  ) : (
+    <span className="text-red-500">● On Borrow</span>
+  );
 
   return (
     <div className="p-4">
       {/* Back Button */}
       <button
-        onClick={goBack}
+        onClick={() => window.history.back()}
         className="bg-gray-300 text-white py-2 px-4 rounded-lg mb-4 hover:bg-gray-500 cursor-pointer"
       >
         <img src="/leftarrow.svg" alt="backarrow" />
@@ -28,20 +27,18 @@ function ItemDetails() {
       {/* Item Details */}
       <div className="flex flex-col gap-4 items-center">
         <img
-          className="w-48 h-48 object-cover rounded-lg  p-4"
-          src="/vivobook.png" // Replace with dynamic image source if necessary
+          className="w-48 h-48 object-cover rounded-lg p-4"
+          src={file || "/defaultimage.png"} // Fallback image if no imageSrc
           alt="Item Image"
         />
-        <div className="flex flex-col gap-6 mb-4 justify-center items-center ">
-
-
+        <div className="flex flex-col gap-6 mb-4 justify-center items-center">
           <div>
-            <p className="text-sm text-gray-500">Genre: Tech</p>
+            <p className="text-sm text-gray-500">Genre: {genre}</p>
             <div className="flex justify-between">
-              <h1 className="text-xl font-bold mb-4 items-center">Item Title</h1>
-              <div className="flex">
+              <h1 className="text-xl font-bold mb-4 items-center">{title}</h1>
+              <div className="flex mx-4">
                 <h1 className="text-xl font-bold mb-4 items-center" id="price">
-                  100
+                  {price}
                 </h1>
                 <h1 className="text-xl font-bold mb-4 items-center">
                   &nbsp;Baht <span className="text-gray-500">per day</span>
@@ -52,16 +49,15 @@ function ItemDetails() {
             {/* Status Indicator */}
             <p className="text-sm text-gray-500">{statusIndicator}</p>
 
-            <p className="text-gray-700 mb-4">
-              This is a detailed description of the item.
-            </p>
+            <p className="text-gray-700 mb-4">{description}</p>
+            <p className="text-gray-700 mb-4">Lender: {lenderName}</p>
           </div>
         </div>
 
         {/* Borrow Item Button */}
         <div className="flex gap-4">
           <button>
-            <img src="/bookmark.svg" alt="" className="p-4 border rounded-lg cursor-pointer"/>
+            <img src="/bookmark.svg" alt="" className="p-4 border rounded-lg cursor-pointer" />
           </button>
           <button className="bg-blue-500 text-white py-2 px-4 rounded-lg cursor-pointer">
             Borrow Item
