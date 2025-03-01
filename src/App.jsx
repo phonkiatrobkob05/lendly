@@ -54,7 +54,6 @@ function App() {
           token: idToken,
         })
       );
-      console.log('new:',userData.data);
       
     }
   };
