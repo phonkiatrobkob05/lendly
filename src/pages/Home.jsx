@@ -1,34 +1,38 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 import Card from "../components/Card";
 import Navbar from '../components/Navbar';
 import { NavLink } from 'react-router-dom';
-import { useState,useEffect } from 'react';
-import axios from 'axios';
-
 
 function Home() {
-  const [data, setData] = useState([]);
-  const authtoken = localStorage.getItem("token");
-
-  const loadData = async () => {
-    try {
-      const getData = await axios.get(import.meta.env.VITE_API_URI + "/product", {
-        headers: { authtoken },
-      });
-      setData(getData.data);
-      console.log(getData.data);
-      
-    } catch (error) {
-      console.error("Error loading data:", error);
-    }
-  };
-
-  useEffect(() => {
-    loadData();
-  }, []);
-
-  
+  const cardData = [
+    {
+      title: "Ichitan Lemon",
+      description: "Lemon Lemon",
+      imageUrl: "/unclea.jpg",
+      tags: ["Tea", "Ichitan", "Lemon"],
+    },
+    {
+      title: "Ichitan Genmai",
+      description: "Rice Rice",
+      imageUrl: "/unclelueng.jpg",
+      tags: ["Tea", "Ichitan", "Genmai"],
+    },
+    {
+      title: "Ichitan Original",
+      description: "Green tea",
+      imageUrl: "/uncletony.jpg",
+      tags: ["Tea", "Ichitan", "Og"],
+    },
+    {
+      title: "Ichitan Original",
+      description: "Green tea",
+      imageUrl: "/unclelee.jpg",
+      tags: ["Tea", "Ichitan", "Og"],
+    },
+    // Add more items as needed
+  ];
 
   return (
     <div className="flex flex-col min-h-screen p-4">
@@ -48,7 +52,7 @@ function Home() {
             <img src="/bellicon.svg" alt="Notification" />
           </button>
         </div>
-
+  
         {/* Hero Section */}
         <div className="flex">
           <div className="flex flex-col text-center mb-8">
@@ -62,7 +66,7 @@ function Home() {
             <img src="/lendborrowlogo.svg" alt="Lend and Borrow" className="w-30" />
           </div>
         </div>
-
+  
         {/* Recommended Section */}
         <div className="w-full">
           <div className="flex mx-auto justify-between">
@@ -81,30 +85,23 @@ function Home() {
             autoplay={{ delay: 3000 }}
             className="w-full"
           >
-            {data.length > 0 ? (
-              data.map((card) => (
-                <SwiperSlide key={card._id}>
-                  <div className="relative w-full aspect-w-1 aspect-h-1">
-                    <Card
-                      id={card._id}
-                      title={card.title}
-                      description={card.description}
-                      file={import.meta.env.VITE_API_URI + "/uploads/" + card.file} // Ensure correct file path
-                      genre={card.genre}
-                      lenderName={card.lenderName}
-                      status={card.status}
-                      price={card.price}
-                    />
-                  </div>
-                </SwiperSlide>
-              ))
-            ) : (
-              <p className="text-center w-full text-gray-500">Loading items...</p>
-            )}
+            {cardData.map((card, index) => (
+              <SwiperSlide key={index}>
+                <div className="relative w-full aspect-w-1 aspect-h-1">
+                  <Card
+                    id={`card-${index}`}
+                    title={card.title}
+                    description={card.description}
+                    imageSrc={card.imageUrl}
+                    tags={card.tags}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
-
-        {/* Trending Section
+  
+        {/* Trending Section */}
         <div className="w-full">
           <div className="flex mx-auto justify-between">
             <h1 className="text-xl font-semibold mb-4">Trending</h1>
@@ -122,30 +119,23 @@ function Home() {
             autoplay={{ delay: 3000 }}
             className="w-full"
           >
-            {data.length > 0 ? (
-              data.map((card) => (
-                <SwiperSlide key={card._id}>
-                  <div className="relative w-full aspect-w-1 aspect-h-1">
-                    <Card
-                      id={card._id}
-                      title={card.title}
-                      description={card.description}
-                      file={import.meta.env.VITE_API_URI + "/uploads/" + card.file}
-                      genre={card.genre}
-                      lenderName={card.lenderName}
-                      status={card.status}
-                      price={card.price}
-                    />
-                  </div>
-                </SwiperSlide>
-              ))
-            ) : (
-              <p className="text-center w-full text-gray-500">Loading items...</p>
-            )}
+            {cardData.map((card, index) => (
+              <SwiperSlide key={index}>
+                <div className="relative w-full aspect-w-1 aspect-h-1">
+                  <Card
+                    id={`card-${index}`}
+                    title={card.title}
+                    description={card.description}
+                    imageSrc={card.imageUrl}
+                    tags={card.tags}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
           </Swiper>
-        </div> */}
-      </div>
-
+        </div>
+      </div> 
+  
       {/* Navbar stays at the bottom */}
       <Navbar />
     </div>
