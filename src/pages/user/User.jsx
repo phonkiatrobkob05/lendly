@@ -7,7 +7,7 @@ const User = ({children}) => {
     console.log('userRoute',user);
     
 
-  return user && user.user.token ? children : <div className='bg-gray-400 h-screen flex'><p className='flex items-center justify-center text-5xl font-bold'>Login!!!!</p></div>
+  return user && user.user.token ? children : <div className='bg-blue-100 h-screen flex justify-center'><p className='flex items-center justify-center text-5xl font-bold'>Loading...</p></div>
     
 }
 
