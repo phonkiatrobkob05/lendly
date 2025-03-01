@@ -16,6 +16,8 @@ function Card({ id, title, description, file, genre, lenderName, status,price })
         price,
       },
     });
+    console.log(file);
+    
   };
 
   // Status Indicator for the card
