@@ -205,9 +205,9 @@ function App() {
     <div className="min-h-screen">
       <Routes>
         {/* Public Routes */}
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/" element={<Default />} />
+        <Route path="/login" element={<Default />} />
         <Route path="/help" element={<Help />} />
         <Route path="/help-page-1" element={<HelpPage1 />} />
         <Route path="/contact" element={<Contact />} />
