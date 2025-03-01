@@ -5,7 +5,6 @@ import Navbar from '../components/Navbar';
 import { NavLink } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
-import React from "react";
 
 
 function Home() {
@@ -29,6 +28,8 @@ function Home() {
     loadData();
   }, []);
 
+ 
+  
   
 
   return (

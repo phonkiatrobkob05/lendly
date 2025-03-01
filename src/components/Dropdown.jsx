@@ -17,7 +17,7 @@ function Dropdown({selected, setSelected}) {
 
             </div>
 
-            {dropdown && (
+            {/* {dropdown && (
             <div className="dropdown-content absolute p-2 pl-3 w-full rounded-lg bg-white 
              shadow-xl font-semibold text-gray-700">
 
@@ -34,7 +34,7 @@ function Dropdown({selected, setSelected}) {
                 ))} 
 
             </div>
-            )}
+            )} */}
 
         </div>
 
