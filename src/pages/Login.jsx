@@ -58,6 +58,7 @@ function Login() {
         <h1 className="mt-6 mb-6 font-[Inter]">กรุณาเข้าสู่ระบบ</h1>
         <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
       </div>
+      
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <div>
           <label
@@ -119,7 +120,7 @@ function Login() {
           </div>
         </div>
 
-        <div className="flex py-4">
+        <div className="flex py-4 text-sm items-center justify-center">
           <h1>Forgot your password? </h1>
           <a href="" className="text-blue-300">
             &nbsp;Reset here
@@ -127,14 +128,14 @@ function Login() {
         </div>
         <button
           type="submit"
-          className="mt-4 bg-blue-500 text-white py-2 px-4 rounded cursor-pointer"
+          className="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded cursor-pointer"
           disabled={value.password.length == ""}
         >
           Login
         </button>
       </form>
       {/* This part will be pushed to the bottom */}
-      <div className="flex mt-auto py-4">
+      <div className="flex mt-auto py-4 text-sm">
         <h1>Don’t have an account? </h1>
         <a href="/#/register" className="text-blue-500">
           &nbsp;Register here

@@ -57,7 +57,7 @@ const Register = () => {
 
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
 
-      <div className="mb-4">
+      <div>
           <label
             htmlFor="studentID"
             className="block text-sm font-medium font-[Inter] text-gray-700 py-1"
@@ -75,7 +75,7 @@ const Register = () => {
           />
         </div>
 
-        <div className="mb-4">
+        <div>
           <label
             htmlFor="fullName"
             className="block text-sm font-medium text-gray-700"
@@ -93,7 +93,7 @@ const Register = () => {
           />
         </div>
 
-        <div className="mb-4">
+        <div>
           <label
             htmlFor="faculty"
             className="block text-sm font-medium text-gray-700"
@@ -228,7 +228,7 @@ const Register = () => {
 
         <button
           type="submit"
-          className="mt-4 bg-blue-500 text-white py-2 px-4 rounded cursor-pointer"
+          className="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded cursor-pointer"
         >
           Submit
         </button>
