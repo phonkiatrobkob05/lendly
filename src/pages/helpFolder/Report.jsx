@@ -39,7 +39,7 @@ function Report() {
     <div className="flex-col w-full items-center h-screen p-8 mt-4 font-[Inter]">
       <div className="flex items-center mb-8">
         <button className="p-2" onClick={() => navigate(-1)}>
-          <img src="backButton.svg" alt="backButton" className="w-8 cursor-pointer" />
+          <img src="backButton.svg" alt="backButton" className="w-8 hover:opacity-[70%] cursor-pointer" />
         </button>
 
         <div className="text-2xl font-bold ml-4">
@@ -49,11 +49,11 @@ function Report() {
 
       <div className="flex flex-col items-center w-full">
         <div className="flex flex-col items-center m-4">
-          <p>
+          <p className="text-2xl pb-2">
             What kind of trouble are you encountering ? <br />
           </p>
 
-          <p>
+          <p className="pb-2">
             คุณกำลังพบเจอปัญหาแบบไหนอยู่ ? <br />
           </p>
         </div>
@@ -83,6 +83,7 @@ function Report() {
               <option value="RFeed">Feed is unable to use</option>
               <option value="RCheat">Tricky or cheating deal</option>
               <option value="RInappro">Inappropriate post or deal</option>
+              <option value="ROther">Other</option>
               
             </select>
           </div>

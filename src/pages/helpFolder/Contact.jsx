@@ -9,7 +9,7 @@ function Contact() {
             <div className="flex items-center mb-8">
 
                 <button className="p-2" onClick={() => navigate(-1)}>
-                    <img src="backButton.svg" alt="backButton" className="w-8" />
+                    <img src="backButton.svg" alt="backButton" className="w-8 hover:opacity-[70%] cursor-pointer" />
                 </button>
 
                 <div className="text-2xl font-bold font-[Inter] ml-4">

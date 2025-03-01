@@ -70,6 +70,7 @@ function App() {
         <Route path="/Help" element={<Help />} />
         <Route path="/HelpPage1" element={<HelpPage1 />} />
         <Route path="/Contact" element={<Contact />} />
+        <Route path="/Loading" element={<Loading />} />
 
         {/* private */}
         <Route
