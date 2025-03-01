@@ -12,7 +12,7 @@ import Help from "./pages/helpFolder/Help";
 import HelpPage1 from "./pages/helpFolder/HelpPage1";
 import Contact from "./pages/helpFolder/Contact";
 import Report from "./pages/helpFolder/Report";
-
+import React from "react";
 import ItemDetails from "./pages/ItemDetails";
 import axios from "axios";
 import { useDispatch } from "react-redux";
