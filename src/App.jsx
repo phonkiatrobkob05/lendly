@@ -48,9 +48,14 @@ function App() {
       dispatch(
         login({
           email: userData.data.email,
+          studentID:userData.data.studentID,
+          fullName:userData.data.fullName,
+          faculty:userData.data.faculty,
           token: idToken,
         })
       );
+      console.log('new:',userData.data);
+      
     }
   };
 
