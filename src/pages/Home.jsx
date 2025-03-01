@@ -17,6 +17,8 @@ function Home() {
         headers: { authtoken },
       });
       setData(getData.data);
+      console.log(getData.data);
+      
     } catch (error) {
       console.error("Error loading data:", error);
     }
