@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./LoadPic.css"
+import React from "react";
 
 function Loading() {
 

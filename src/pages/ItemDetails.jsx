@@ -1,4 +1,5 @@
 import { useLocation, useParams } from 'react-router-dom';
+import React from "react";
 
 function ItemDetails() {
   const location = useLocation(); // Get the location object
