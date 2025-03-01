@@ -10,7 +10,7 @@ function Home() {
     {
       title: "Ichitan Lemon",
       description: "Lemon Lemon",
-      imageUrl: "/unclea.jpg",
+      imageUrl: "/unclelee.jpg",
       tags: ["Tea", "Ichitan", "Lemon"],
     },
     {
