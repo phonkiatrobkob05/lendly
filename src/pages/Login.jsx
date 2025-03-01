@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { login, logout } from "../store/UserSlice";
+import { login } from "../store/UserSlice";
 import { useNavigate } from "react-router-dom";
 
 
@@ -43,6 +43,7 @@ function Login() {
       navigate('/Home')
     } catch (error) {
       console.log("login error: " + error);
+      alert('Email or Password Invalid')
     }
   };
 

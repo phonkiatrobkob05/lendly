@@ -1,8 +1,18 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { logout } from "../../store/UserSlice";
 
 function Profile() {
   const [isLogout, setIsLogout] = useState(false);
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const handleLogout=()=>{
+    dispatch(logout())
+    navigate('/')
+  }
 
   return (
     <div className="w-full h-screen flex flex-col items-center gap-[10px] relative">
@@ -83,8 +93,8 @@ function Profile() {
                 setIsLogout(true);
               }}
             >
-              <i className="fa-solid fa-arrow-right-from-bracket text-[30px] text-[#DC2626]"></i>
-              <p className="text-[14px]">Logout</p>
+              <i className="fa-solid fa-arrow-right-from-bracket text-[30px] text-[#DC2626] cursor-pointer "></i>
+              <button className="text-[14px] cursor-pointer ">Logout</button>
             </div>
           </div>
         </div>
@@ -96,14 +106,14 @@ function Profile() {
                 Are you sure to Logout?
               </div>
               <div className="flex justify-center  gap-2 px-2">
-                <button className="w-[142px] h-[38px] bg-[#D9D9D9]  rounded-[20px] text-[16px] text-[#5194FF]">
+                <button className="w-[142px] h-[38px] bg-[#D9D9D9]  rounded-[20px] text-[16px] text-[#5194FF] cursor-pointer" onClick={handleLogout} >
                   Yes
                 </button>
                 <button
                   onClick={() => {
                     setIsLogout(false);
                   }}
-                  className="w-[142px] h-[38px] bg-[#D9D9D9]  rounded-[20px] text-[16px] text-[#DC2626]"
+                  className="w-[142px] h-[38px] bg-[#D9D9D9]  rounded-[20px] text-[16px] text-[#DC2626] cursor-pointer"
                 >
                   No
                 </button>
