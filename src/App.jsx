@@ -14,6 +14,7 @@ import HelpPage1 from "./pages/helpFolder/HelpPage1";
 import Report from "./pages/helpFolder/Report";
 import Contact from "./pages/helpFolder/Contact";
 import Assurance from "./pages/helpFolder/Assurance";
+import Itemdetail from './pages/Itemdetail';
 
 function App() {
   return (
@@ -34,7 +35,8 @@ function App() {
         <Route path="/Report" element={<Report />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Assurance" element={<Assurance />} />
-        
+        <Route path="/itemdetail/:id" element={<Itemdetail />} />
+
         <Route path="/Feed" element={<Feed />} />
         <Route path="/Library" element={<Library />} />
       </Routes>

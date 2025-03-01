@@ -8,24 +8,28 @@ import { NavLink } from 'react-router-dom';
 function Home() {
   const cardData = [
     {
+      id: "1",
       title: "Ichitan Lemon",
       description: "Lemon Lemon",
       imageUrl: "/unclea.jpg",
       tags: ["Tea", "Ichitan", "Lemon"],
     },
     {
+      id: "2",
       title: "Ichitan Genmai",
       description: "Rice Rice",
       imageUrl: "/unclelueng.jpg",
       tags: ["Tea", "Ichitan", "Genmai"],
     },
     {
+      id: "3",
       title: "Ichitan Original",
       description: "Green tea",
       imageUrl: "/uncletony.jpg",
       tags: ["Tea", "Ichitan", "Og"],
     },
     {
+      id: "4",
       title: "Ichitan Original",
       description: "Green tea",
       imageUrl: "/unclelee.jpg",
@@ -85,16 +89,19 @@ function Home() {
             autoplay={{ delay: 3000 }}
             className="w-full"
           >
-            {cardData.map((card, index) => (
-              <SwiperSlide key={index}>
+            {cardData.map((card) => (
+              <SwiperSlide key={card.id}>
                 <div className="relative w-full aspect-w-1 aspect-h-1">
-                  <Card
-                    id={`card-${index}`}
-                    title={card.title}
-                    description={card.description}
-                    imageSrc={card.imageUrl}
-                    tags={card.tags}
-                  />
+                  {/* Make each card a clickable link */}
+                  <NavLink to={`/itemdetail/${card.id}`}>
+                    <Card
+                      id={`card-${card.id}`}
+                      title={card.title}
+                      description={card.description}
+                      imageSrc={card.imageUrl}
+                      tags={card.tags}
+                    />
+                  </NavLink>
                 </div>
               </SwiperSlide>
             ))}
@@ -119,22 +126,24 @@ function Home() {
             autoplay={{ delay: 3000 }}
             className="w-full"
           >
-            {cardData.map((card, index) => (
-              <SwiperSlide key={index}>
+            {cardData.map((card) => (
+              <SwiperSlide key={card.id}>
                 <div className="relative w-full aspect-w-1 aspect-h-1">
-                  <Card
-                    id={`card-${index}`}
-                    title={card.title}
-                    description={card.description}
-                    imageSrc={card.imageUrl}
-                    tags={card.tags}
-                  />
+                  <NavLink to={`/itemdetail/${card.id}`}>
+                    <Card
+                      id={`card-${card.id}`}
+                      title={card.title}
+                      description={card.description}
+                      imageSrc={card.imageUrl}
+                      tags={card.tags}
+                    />
+                  </NavLink>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
-      </div> 
+      </div>
   
       {/* Navbar stays at the bottom */}
       <Navbar />
