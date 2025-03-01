@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Card from "../components/Card";
@@ -23,27 +22,6 @@ function Home() {
     }
   };
 
-  useEffect(() => {
-    loadData();
-  }, []);
-
-  const [data, setData] = useState([])
-  const authtoken = localStorage.getItem('token')
-
-  const loadData = async () => {
-    try {
-      const getData = await axios.get(
-        import.meta.env.VITE_API_URI + "/product",{headers:{authtoken}}
-      );
-      setData(getData.data);
-      console.log(getData.data);
-      
-    } catch (error) {
-      console.log(error);
-      console.log("loadData error");
-    }
-  };
- 
   useEffect(() => {
     loadData();
   }, []);
