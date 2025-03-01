@@ -1,55 +1,31 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import React, { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import Card from "../components/Card";
 import Navbar from '../components/Navbar';
 import { NavLink } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
 
+
 function Home() {
-  const cardData = [
-    {
-      title: "Ichitan Lemon",
-      description: "Lemon Lemon",
-      file: "/unclea.jpg",
-      genre: "Tea",  // Added genre
-      lenderName: "John Doe",  // Added lender name
-      status: "Available",  // Added status
-      price: 40,  // Added price
-    },
-    {
-      title: "Ichitan Genmai",
-      description: "Rice Rice",
-      file: "/unclelueng.jpg",
-      genre: "Tea",  // Added genre
-      lenderName: "Jane Smith",  // Added lender name
-      status: "On Borrow",  // Added status
-      price: 20,  // Added price
+  const [data, setData] = useState([]);
+  const authtoken = localStorage.getItem("token");
 
-    },
-    {
-      title: "Ichitan Original",
-      description: "Green tea",
-      file: "/uncletony.jpg",
-      genre: "Tea",  // Added genre
-      lenderName: "Alice Brown",  // Added lender name
-      status: "Available",  // Added status
-      price: 30,  // Added price
+  const loadData = async () => {
+    try {
+      const getData = await axios.get(import.meta.env.VITE_API_URI + "/product", {
+        headers: { authtoken },
+      });
+      setData(getData.data);
+    } catch (error) {
+      console.error("Error loading data:", error);
+    }
+  };
 
-    },
-    {
-      title: "Ichitan Original",
-      description: "Green tea",
-      file: "/unclelee.jpg",
-      genre: "Tea",  // Added genre
-      lenderName: "Bob White",  // Added lender name
-      status: "On Borrow",  // Added status
-      price: 210,  // Added price
-
-    },
-    // Add more items as needed
-  ];
+  useEffect(() => {
+    loadData();
+  }, []);
 
   const [data, setData] = useState([])
   const authtoken = localStorage.getItem('token')
@@ -125,26 +101,30 @@ function Home() {
             autoplay={{ delay: 3000 }}
             className="w-full"
           >
-            {cardData.map((card, index) => (
-              <SwiperSlide key={index}>
-                <div className="relative w-full aspect-w-1 aspect-h-1">
-                  <Card
-                    id={`card-${index}`}
-                    title={card.title}
-                    description={card.description}
-                    file={card.file}
-                    genre={card.genre} // Pass genre
-                    lenderName={card.lenderName} // Pass lender name
-                    status={card.status} // Pass status
-                    price={card.price} // Pass price
-                  />
-                </div>
-              </SwiperSlide>
-            ))}
+            {data.length > 0 ? (
+              data.map((card) => (
+                <SwiperSlide key={card._id}>
+                  <div className="relative w-full aspect-w-1 aspect-h-1">
+                    <Card
+                      id={card._id}
+                      title={card.title}
+                      description={card.description}
+                      file={import.meta.env.VITE_API_URI + "/uploads/" + card.file} // Ensure correct file path
+                      genre={card.genre}
+                      lenderName={card.lenderName}
+                      status={card.status}
+                      price={card.price}
+                    />
+                  </div>
+                </SwiperSlide>
+              ))
+            ) : (
+              <p className="text-center w-full text-gray-500">Loading items...</p>
+            )}
           </Swiper>
         </div>
 
-        {/* Trending Section */}
+        {/* Trending Section
         <div className="w-full">
           <div className="flex mx-auto justify-between">
             <h1 className="text-xl font-semibold mb-4">Trending</h1>
@@ -162,25 +142,28 @@ function Home() {
             autoplay={{ delay: 3000 }}
             className="w-full"
           >
-            {cardData.map((card, index) => (
-              <SwiperSlide key={index}>
-                <div className="relative w-full aspect-w-1 aspect-h-1">
-                  <Card
-                    id={`card-${index}`}
-                    title={card.title}
-                    description={card.description}
-                    file={card.file}
-                    genre={card.genre} // Pass genre
-                    lenderName={card.lenderName} // Pass lender name
-                    status={card.status} // Pass status
-                    price={card.price} // Pass price
-
-                  />
-                </div>
-              </SwiperSlide>
-            ))}
+            {data.length > 0 ? (
+              data.map((card) => (
+                <SwiperSlide key={card._id}>
+                  <div className="relative w-full aspect-w-1 aspect-h-1">
+                    <Card
+                      id={card._id}
+                      title={card.title}
+                      description={card.description}
+                      file={import.meta.env.VITE_API_URI + "/uploads/" + card.file}
+                      genre={card.genre}
+                      lenderName={card.lenderName}
+                      status={card.status}
+                      price={card.price}
+                    />
+                  </div>
+                </SwiperSlide>
+              ))
+            ) : (
+              <p className="text-center w-full text-gray-500">Loading items...</p>
+            )}
           </Swiper>
-        </div>
+        </div> */}
       </div>
 
       {/* Navbar stays at the bottom */}

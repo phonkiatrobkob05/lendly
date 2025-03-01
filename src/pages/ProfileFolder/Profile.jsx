@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../../components/Navbar";
 
 function Profile() {
   const [isLogout, setIsLogout] = useState(false);
@@ -35,9 +35,7 @@ function Profile() {
               <i className="fa-regular fa-pen-to-square text-[30px] text-[#5194FF]"></i>
               <p className="text-[14px]">Edit Profile</p>
             </div>
-            <div className="">
-              <i className="fa-solid fa-angle-right text-[30px] text-[#9CA3AF]"></i>
-            </div>
+            <i className="fa-solid fa-angle-right text-[30px] text-[#9CA3AF]"></i>
           </div>
 
           {/* Member ship */}
@@ -46,9 +44,7 @@ function Profile() {
               <i className="fa-solid fa-circle-user text-[30px] text-[#5194FF]"></i>
               <p className="text-[14px]">Member ship</p>
             </div>
-            <div className="">
-              <i className="fa-solid fa-angle-right text-[30px] text-[#9CA3AF]"></i>
-            </div>
+            <i className="fa-solid fa-angle-right text-[30px] text-[#9CA3AF]"></i>
           </div>
 
           {/* Notifications */}
@@ -57,9 +53,7 @@ function Profile() {
               <i className="fa-regular fa-bell text-[30px] text-[#5194FF]"></i>
               <p className="text-[14px]">Notifications</p>
             </div>
-            <div className="">
-              <i className="fa-solid fa-angle-right text-[30px] text-[#9CA3AF]"></i>
-            </div>
+            <i className="fa-solid fa-angle-right text-[30px] text-[#9CA3AF]"></i>
           </div>
 
           {/* Help */}
@@ -68,21 +62,18 @@ function Profile() {
               <i className="fa-regular fa-circle-question text-[30px] text-[#5194FF]"></i>
               <p className="text-[14px]">Help</p>
             </div>
-            <div className="">
-              <i className="fa-solid fa-angle-right text-[30px] text-[#9CA3AF]"></i>
-            </div>
+            <i className="fa-solid fa-angle-right text-[30px] text-[#9CA3AF]"></i>
           </div>
 
           {/* Report a problem */}
-          <div className="flex justify-between border-b-2 py-[16px] border-[#9CA3AF]">
+          <a href="/#/profilereport" className="flex justify-between border-b-2 py-[16px] border-[#9CA3AF]">
             <div className="flex justify-center items-center gap-[13px]">
               <i className="fa-solid fa-triangle-exclamation text-[30px] text-[#5194FF]"></i>
               <p className="text-[14px]">Report a problem</p>
             </div>
-            <div className="">
-              <i className="fa-solid fa-angle-right text-[30px] text-[#9CA3AF]"></i>
-            </div>
-          </div>
+
+            <i className="fa-solid fa-angle-right text-[30px] text-[#9CA3AF]"></i>
+          </a>
 
           {/* Logout */}
           <div className="flex justify-between border-b-2 py-[16px] border-[#9CA3AF]">
