@@ -36,13 +36,13 @@ function Report() {
 //   };
 
   return (
-    <div className="flex-col w-full items-center h-screen p-8 mt-4">
+    <div className="flex-col w-full items-center h-screen p-8 mt-4 font-[Inter]">
       <div className="flex items-center mb-8">
         <button className="p-2" onClick={() => navigate(-1)}>
-          <img src="backButton.svg" alt="backButton" className="w-8" />
+          <img src="backButton.svg" alt="backButton" className="w-8 cursor-pointer" />
         </button>
 
-        <div className="text-2xl font-bold font-[Inter] ml-4">
+        <div className="text-2xl font-bold ml-4">
           Report Problems
         </div>
       </div>

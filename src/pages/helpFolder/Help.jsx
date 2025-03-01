@@ -9,7 +9,7 @@ function Help() {
             <div className="flex items-center justify-between mb-8">
 
                 <button className="p-2" onClick={() => navigate(-1)}>
-                    <img src="backButton.svg" alt="backButton" className="w-8 hover:opacity-[70%]" />
+                    <img src="backButton.svg" alt="backButton" className="w-8 hover:opacity-[70%] cursor-pointer" />
                 </button>
 
                 <div className="text-2xl font-bold font-[Inter]">
@@ -17,7 +17,7 @@ function Help() {
                 </div>
 
                 <button className="p-2"  onClick={() => navigate(-1)}>
-                    <img src="closeButton.svg" alt="closeButton" className="w-8 hover:opacity-[70%]" />
+                    <img src="closeButton.svg" alt="closeButton" className="w-8 hover:opacity-[70%] cursor-pointer" />
                 </button>
 
             </div>
