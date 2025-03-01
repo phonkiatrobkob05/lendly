@@ -66,7 +66,7 @@ function App() {
         {/* public */}
         <Route path="/Login" element={<Login />} />
         <Route path="/Register" element={<Register />} />
-        <Route path="/" element={<Default />} />
+        <Route path="/Home" element={<Default />} />
         <Route path="/Help" element={<Help />} />
         <Route path="/HelpPage1" element={<HelpPage1 />} />
         <Route path="/Contact" element={<Contact />} />
@@ -74,11 +74,11 @@ function App() {
 
         {/* private */}
         <Route
-          path="/Home"
+          path="/"
           element={
-            <User>
+            
               <Home />
-            </User>
+            
           }
         />
         <Route
