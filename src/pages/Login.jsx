@@ -43,6 +43,7 @@ function Login() {
       navigate('/Home')
     } catch (error) {
       console.log("login error: " + error);
+      alert('Email or Password Invalid')
     }
   };
 

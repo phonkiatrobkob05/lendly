@@ -87,24 +87,39 @@ function App() {
         <Route
           path="/Profile"
           element={
-            <user>
+            <User>
               <Profile />
-            </user>
+            </User>
           }
         />
         <Route
           path="/ProfileReport"
           element={
-            <user>
+            <User>
               <ProfileReport />
-            </user>
+            </User>
           }
         />
-        <Route path="/NextRegister" element={<NextRegister />} />
-        <Route path="/Navbar" element={<Navbar />} />
-        <Route path="/Feed" element={<Feed />} />
-        <Route path="/Library" element={<Library />} />
-        <Route path="/item/:id" element={<ItemDetails />} />
+        <Route path="/Navbar" element={
+          <User>
+            <Navbar />
+          </User>
+        } />
+        <Route path="/Feed" element={
+          <User>
+            <Feed />
+          </User>
+        } />
+        <Route path="/Library" element={
+          <User>
+            <Library />
+          </User>
+        } />
+        <Route path="/item/:id" element={
+          <User>
+            <ItemDetails />
+          </User>
+        } />
       </Routes>
     </div>
   );
